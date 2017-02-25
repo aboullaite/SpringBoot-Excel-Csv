@@ -4,6 +4,7 @@ import me.aboullaite.view.CsvView;
 import me.aboullaite.view.ExcelView;
 import me.aboullaite.viewResolver.CsvViewResolver;
 import me.aboullaite.viewResolver.ExcelViewResolver;
+import me.aboullaite.viewResolver.PdfViewResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -45,6 +46,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
         resolvers.add(csvViewResolver());
         resolvers.add(excelViewResolver());
+        resolvers.add(pdfViewResolver());
 
         resolver.setViewResolvers(resolvers);
         return resolver;
@@ -66,6 +68,15 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public ViewResolver csvViewResolver() {
         return new CsvViewResolver();
+    }
+
+    /*
+     * Configure View resolver to provide Pdf output using iText library to
+     * generate pdf output for an object content
+     */
+    @Bean
+    public ViewResolver pdfViewResolver() {
+        return new PdfViewResolver();
     }
 
 

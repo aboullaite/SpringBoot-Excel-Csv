@@ -21,8 +21,8 @@ public class ExcelView extends AbstractXlsView{
                                       HttpServletRequest request,
                                       HttpServletResponse response) throws Exception {
 
-// change the file name
-        response.setHeader("Content-Disposition", "attachment; filename=\"my-xlsx-file.xls\"");
+        // change the file name
+        response.setHeader("Content-Disposition", "attachment; filename=\"my-xls-file.xls\"");
 
         @SuppressWarnings("unchecked")
         List<User> users = (List<User>) model.get("users");
@@ -48,7 +48,7 @@ public class ExcelView extends AbstractXlsView{
         header.getCell(0).setCellStyle(style);
         header.createCell(1).setCellValue("LastName");
         header.getCell(1).setCellStyle(style);
-        header.createCell(2).setCellValue("LastName");
+        header.createCell(2).setCellValue("Age");
         header.getCell(2).setCellStyle(style);
         header.createCell(3).setCellValue("Job Title");
         header.getCell(3).setCellStyle(style);
@@ -79,7 +79,7 @@ public class ExcelView extends AbstractXlsView{
             userRow.createCell(7).setCellValue(user.getCountry());
             userRow.createCell(8).setCellValue(user.getPhoneNumber());
 
-            };
+            }
 
     }
 

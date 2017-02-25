@@ -105,4 +105,8 @@ public class User {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    public int getColumnCount() {
+        return getClass().getDeclaredFields().length;
+    }
 }

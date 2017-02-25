@@ -27,7 +27,7 @@ public class UserService {
     public List<User> findAllUsers(){
 
 
-        List<User> users = IntStream.rangeClosed(1,10)
+        List<User> users = IntStream.rangeClosed(1,20)
                 .mapToObj( i -> new User(appUtil.generateRandomChars(candidateChars,10), appUtil.generateRandomChars(candidateChars, 10), appUtil.generateRandonInteger(i),
                         appUtil.generateRandomChars(candidateChars,15), appUtil.generateRandomChars(candidateChars,15), appUtil.generateRandomChars(candidateChars,20),
                         appUtil.generateRandomChars(candidateChars,10), appUtil.generateRandomChars(candidateChars,10), appUtil.generateRandomChars(candidateNum,10)))
