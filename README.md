@@ -8,4 +8,4 @@ I'm using:
 
 - Itext for pdf generation
 - Apache POI for Excel generation
-- Super CSV for pdf generation
+- Super CSV for CSV generation
