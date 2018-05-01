@@ -1,7 +1,5 @@
 package me.aboullaite.config;
 
-import me.aboullaite.view.CsvView;
-import me.aboullaite.view.ExcelView;
 import me.aboullaite.viewResolver.CsvViewResolver;
 import me.aboullaite.viewResolver.ExcelViewResolver;
 import me.aboullaite.viewResolver.PdfViewResolver;
@@ -11,17 +9,11 @@ import org.springframework.http.MediaType;
 import org.springframework.web.accept.ContentNegotiationManager;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
-import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
 
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Created by aboullaite on 2017-02-24.
- */
 
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {

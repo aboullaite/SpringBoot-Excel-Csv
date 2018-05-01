@@ -4,24 +4,20 @@ import me.aboullaite.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-/**
- * Created by aboullaite on 2017-02-23.
- */
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class Export {
+public class ExportController {
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     /**
      * Handle request to download an Excel document
      */
-    @RequestMapping(value = "/download", method = RequestMethod.GET)
+    @GetMapping("/download")
     public String download(Model model) {
+
         model.addAttribute("users", userService.findAllUsers());
         return "";
     }

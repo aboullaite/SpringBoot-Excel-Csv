@@ -13,9 +13,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by aboullaite on 2017-02-25.
- */
 public class PdfView extends AbstractPdfView {
     @Override
     protected void buildPdfDocument(Map<String, Object> model, Document document, PdfWriter writer, HttpServletRequest request, HttpServletResponse response) throws Exception {

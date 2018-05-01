@@ -1,27 +1,17 @@
  package me.aboullaite.view;
 
- import java.util.Map;
+ import org.springframework.web.servlet.view.AbstractView;
 
  import javax.servlet.http.HttpServletRequest;
  import javax.servlet.http.HttpServletResponse;
-
- import org.springframework.web.servlet.view.AbstractView;
+ import java.util.Map;
 
 public abstract class AbstractCsvView extends AbstractView {
 
     private static final String CONTENT_TYPE = "text/csv";
 
-
-    private String url;
-
-
     public AbstractCsvView() {
         setContentType(CONTENT_TYPE);
-    }
-
-
-    public void setUrl(String url) {
-        this.url = url;
     }
 
     @Override
@@ -36,8 +26,6 @@ public abstract class AbstractCsvView extends AbstractView {
         response.setContentType(getContentType());
         buildCsvDocument(model, request, response);
     }
-
-
 
     protected abstract void buildCsvDocument(
             Map<String, Object> model, HttpServletRequest request, HttpServletResponse response)
