@@ -18,8 +18,8 @@ import java.util.stream.IntStream;
 @Service
 public class UserService {
 
-    final String candidateChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    final String candidateNum = "0123456789";
+    private final String candidateChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private final String candidateNum = "0123456789";
 
 
     @Autowired
@@ -27,13 +27,11 @@ public class UserService {
     public List<User> findAllUsers(){
 
 
-        List<User> users = IntStream.rangeClosed(1,20)
+        return IntStream.rangeClosed(1,20)
                 .mapToObj( i -> new User(appUtil.generateRandomChars(candidateChars,10), appUtil.generateRandomChars(candidateChars, 10), appUtil.generateRandonInteger(i),
                         appUtil.generateRandomChars(candidateChars,15), appUtil.generateRandomChars(candidateChars,15), appUtil.generateRandomChars(candidateChars,20),
                         appUtil.generateRandomChars(candidateChars,10), appUtil.generateRandomChars(candidateChars,10), appUtil.generateRandomChars(candidateNum,10)))
                 .collect(Collectors.toList());
-
-        return users;
 
     }
 }
