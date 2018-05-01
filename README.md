@@ -1,8 +1,8 @@
 # SpringBoot Export Excel, CsSV and PDF.
 
-This is a very simple project that showcases export to Excel (using AbstractXlsView), CSV (by extending AbstractView) and PDF. 
+This is a very simple project that showcases export to Excel (using `AbstractXlsView`), CSV (by extending `AbstractView`) and PDF. 
 
-This project favors file extensions (xls/csv/pdf)to resolve views.
+This project favors file extensions (xls/csv/pdf) to resolve views.
 
 I'm using:
 
