@@ -11,10 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayOutputStream;
 import java.util.Map;
 
-/**
- * Created by aboullaite on 2017-02-25.
- */
-
 public abstract class AbstractPdfView extends AbstractView {
 
     /**
