@@ -10,9 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by aboullaite on 2017-02-23.
- */
 public class ExcelView extends AbstractXlsView{
 
     @Override
@@ -44,7 +41,7 @@ public class ExcelView extends AbstractXlsView{
 
         // create header row
         Row header = sheet.createRow(0);
-        header.createCell(0).setCellValue("Firstname");
+        header.createCell(0).setCellValue("FirstName");
         header.getCell(0).setCellStyle(style);
         header.createCell(1).setCellValue("LastName");
         header.getCell(1).setCellStyle(style);
