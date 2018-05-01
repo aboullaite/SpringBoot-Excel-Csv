@@ -1,4 +1,4 @@
-# Spring Boot Export to Excel, CSV and PDF.
+# Spring Boot Export to Excel, CSV, and PDF.
 
 This is a very simple project that showcases export to Excel (using `AbstractXlsView`), CSV (by extending `AbstractView`) and PDF. 
 
