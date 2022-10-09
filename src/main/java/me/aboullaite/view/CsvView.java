@@ -20,8 +20,7 @@ public class CsvView extends AbstractCsvView {
         response.setHeader("Content-Disposition", "attachment; filename=\"my-csv-file.csv\"");
 
         List<User> users = (List<User>) model.get("users");
-        String[] header = {"FirstName", "LastName", "LastName", "JobTitle", "Company", "Address", "City", "Country",
-                "PhoneNumber"};
+        String[] header = ( String[]) model.get("header");
         ICsvBeanWriter csvWriter = new CsvBeanWriter(response.getWriter(),
                 CsvPreference.STANDARD_PREFERENCE);
 

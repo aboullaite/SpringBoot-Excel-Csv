@@ -39,27 +39,13 @@ public class ExcelView extends AbstractXlsView{
         style.setFont(font);
 
 
-        // create header row
         Row header = sheet.createRow(0);
-        header.createCell(0).setCellValue("FirstName");
-        header.getCell(0).setCellStyle(style);
-        header.createCell(1).setCellValue("LastName");
-        header.getCell(1).setCellStyle(style);
-        header.createCell(2).setCellValue("Age");
-        header.getCell(2).setCellStyle(style);
-        header.createCell(3).setCellValue("Job Title");
-        header.getCell(3).setCellStyle(style);
-        header.createCell(4).setCellValue("Company");
-        header.getCell(4).setCellStyle(style);
-        header.createCell(5).setCellValue("Address");
-        header.getCell(5).setCellStyle(style);
-        header.createCell(6).setCellValue("City");
-        header.getCell(6).setCellStyle(style);
-        header.createCell(7).setCellValue("Country");
-        header.getCell(7).setCellStyle(style);
-        header.createCell(8).setCellValue("Phone Number");
-        header.getCell(8).setCellStyle(style);
 
+        String[] headerFields = ( String[]) model.get("header");
+        for (int i=0;i<headerFields.length;i++){
+            header.createCell(i).setCellValue(headerFields[i]);
+            header.getCell(i).setCellStyle(style);
+        }
 
 
         int rowCount = 1;

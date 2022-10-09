@@ -35,33 +35,15 @@ public class PdfView extends AbstractPdfView {
         cell.setBackgroundColor(BaseColor.DARK_GRAY);
         cell.setPadding(5);
 
-        // write table header
-        cell.setPhrase(new Phrase("First Name", font));
-        table.addCell(cell);
 
-        cell.setPhrase(new Phrase("Last Name", font));
-        table.addCell(cell);
+        String[] headerFields = ( String[]) model.get("header");
+        for (int i=0;i<headerFields.length;i++){
 
-        cell.setPhrase(new Phrase("Age", font));
-        table.addCell(cell);
+            cell.setPhrase(new Phrase(headerFields[i], font));
+            table.addCell(cell);
+        }
 
-        cell.setPhrase(new Phrase("Job Title", font));
-        table.addCell(cell);
 
-        cell.setPhrase(new Phrase("Company", font));
-        table.addCell(cell);
-
-        cell.setPhrase(new Phrase("Address", font));
-        table.addCell(cell);
-
-        cell.setPhrase(new Phrase("City", font));
-        table.addCell(cell);
-
-        cell.setPhrase(new Phrase("Country", font));
-        table.addCell(cell);
-
-        cell.setPhrase(new Phrase("Phone Number", font));
-        table.addCell(cell);
 
         for(User user : users){
             table.addCell(user.getFirstName());
