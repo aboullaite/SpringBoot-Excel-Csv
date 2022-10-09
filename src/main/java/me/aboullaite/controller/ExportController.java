@@ -1,6 +1,6 @@
 package me.aboullaite.controller;
 
-import me.aboullaite.config.WebConfig;
+
 import me.aboullaite.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,8 +14,6 @@ public class ExportController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private WebConfig webConfig;
 
     /**
      * Handle request to download an Excel document
